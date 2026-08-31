@@ -1,0 +1,143 @@
+/* Résumé-specific layout. Loaded after style.css, reuses its tokens. */
+
+.resume .wrap { max-width: 760px; }
+
+a.brand { text-decoration: none; }
+
+.resume-head {
+  padding: 40px 0 24px;
+}
+
+.resume-head h1 {
+  margin: 0 0 6px;
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.resume-head .contact {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.resume-head .contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.resume-head .contact a:hover { text-decoration: underline; }
+
+.resume .toolbar {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.resume .toolbar a {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resume .toolbar a:hover { text-decoration: underline; }
+
+.resume section { padding: 24px 0; }
+
+.resume h2 {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.skills-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.skills-table th {
+  text-align: left;
+  vertical-align: top;
+  padding: 4px 16px 4px 0;
+  white-space: nowrap;
+  color: var(--muted);
+  font-weight: 600;
+  width: 140px;
+}
+
+.skills-table td { padding: 4px 0; }
+
+.job { margin-bottom: 22px; }
+
+.job:last-child { margin-bottom: 0; }
+
+.job-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  align-items: baseline;
+}
+
+.job-title strong { font-size: 1rem; }
+
+.job-title .dates {
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.job .org {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 2px 0 8px;
+}
+
+.job .note {
+  font-size: 0.92rem;
+  margin: 0 0 8px;
+}
+
+.job ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.job ul li { font-size: 0.95rem; }
+
+.subjob {
+  margin: 14px 0 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--border);
+}
+
+.edu-item { margin-bottom: 12px; }
+.edu-item strong { display: block; }
+.edu-item .org { color: var(--muted); font-size: 0.92rem; }
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --fg: #000000;
+    --muted: #444444;
+    --border: #cccccc;
+    --accent: #000000;
+  }
+  body { font-size: 10.5pt; line-height: 1.45; }
+  .resume .wrap { max-width: none; padding: 0; }
+  .site-chrome,
+  .resume .toolbar { display: none !important; }
+  .resume-head { padding-top: 0; }
+  .resume section { padding: 10px 0; }
+  .resume h2 { break-after: avoid; }
+  .job-title { break-after: avoid; }
+  .job .org { break-after: avoid; }
+  .subjob { break-inside: avoid; }
+  .job ul li { break-inside: avoid; }
+  a { color: #000 !important; text-decoration: none !important; }
+}
